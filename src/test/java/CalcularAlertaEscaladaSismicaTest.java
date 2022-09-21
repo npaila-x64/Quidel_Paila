@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -5,8 +6,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CalcularRegistroMayorIgualQue5_5Test {
-
+class CalcularAlertaEscaladaSismicaTest {
 
     Double[][] matriz;
 
@@ -41,7 +41,13 @@ class CalcularRegistroMayorIgualQue5_5Test {
 
     @Test
     void calcularRegistroTest() {
-        var dias = CalcularRegistroMayorIgualQue5_5.calcularRegistro(matriz);
+        var dias = CalcularAlertaEscaladaSismica.calcularRegistro(matriz);
         assertEquals(List.of(1), dias);
+    }
+
+    @Test
+    void calcularRegistroFallaTest() {
+        var dias = CalcularAlertaEscaladaSismica.calcularRegistro(matriz);
+        assertNotEquals(List.of(), dias);
     }
 }
