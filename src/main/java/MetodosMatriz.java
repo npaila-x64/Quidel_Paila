@@ -7,6 +7,11 @@ public class MetodosMatriz {
         return new double[n][24];
     }
 
+    public static void mostrarMayorSismo(double[][]matriz){
+        List<String> datos = datosMayorSismo(matriz);
+        System.out.println("Mayor Sismo: " + datos);
+    }
+
     public static List<String> datosMayorSismo(double[][]matriz){
         List<String> datosMayorSismo= new ArrayList<>();
         double numMayor = 0;
