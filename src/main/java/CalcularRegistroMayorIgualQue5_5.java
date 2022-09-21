@@ -7,7 +7,7 @@ public class CalcularRegistroMayorIgualQue5_5 {
         List<Integer> diasObjetivo = new ArrayList<>();
         for (int diaIndice = 0; diaIndice < matriz.length; diaIndice++) {
             for (int gradoIndice = 0; gradoIndice < matriz[0].length; gradoIndice++) {
-                if (matriz[diaIndice][gradoIndice] >= 5.5) {
+                if (matriz[diaIndice][gradoIndice] >= 9) {
                     diasObjetivo.add(diaIndice + 1);
                     break;
                 }
@@ -22,5 +22,6 @@ public class CalcularRegistroMayorIgualQue5_5 {
         for (int dia : diasObjetivo) {
             System.out.println(dia);
         }
+        System.out.println("El total de días es de: " + diasObjetivo.size());
     }
 }
