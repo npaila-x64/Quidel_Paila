@@ -1,24 +1,37 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class MetodosMatriz {
 
     public static double[][] generarMatriz(int n){
         return new double[n][24];
     }
 
-    public static double buscarMayorValorMatriz(double[][]matriz){
+    public static List<String> datosMayorSismo(double[][]matriz){
+        List<String> datosMayorSismo= new ArrayList<>();
         double numMayor = 0;
+        int diaMayorSismo = 0;
+        int horaMayorSismo = 0;
+
         try{
-            for (double[] dia : matriz) {
-                for (double valorPorHora : dia) {
-                    if (valorPorHora > numMayor) {
-                        numMayor = valorPorHora;
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+                    if(matriz[i][j] > numMayor){
+                        numMayor = matriz[i][j];
+                        diaMayorSismo = i;
+                        horaMayorSismo = j;
                     }
                 }
             }
         }catch (NullPointerException e){
             System.out.println("La matriz entregada es nula");
-            return 0;
+            return null;
         }
-        return numMayor;
+        datosMayorSismo.add(String.valueOf(diaMayorSismo));
+        datosMayorSismo.add(String.valueOf(horaMayorSismo));
+        datosMayorSismo.add(String.valueOf(numMayor));
+
+        return datosMayorSismo;
     }
 
     public static double valorRegistroRandom(){
