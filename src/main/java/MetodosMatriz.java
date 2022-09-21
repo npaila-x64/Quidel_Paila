@@ -18,7 +18,7 @@ public class MetodosMatriz {
                 for (int j = 0; j < matriz[i].length; j++) {
                     if(matriz[i][j] > numMayor){
                         numMayor = matriz[i][j];
-                        diaMayorSismo = i;
+                        diaMayorSismo = i+1;
                         horaMayorSismo = j;
                     }
                 }
@@ -27,9 +27,9 @@ public class MetodosMatriz {
             System.out.println("La matriz entregada es nula");
             return null;
         }
-        datosMayorSismo.add(String.valueOf(diaMayorSismo));
-        datosMayorSismo.add(String.valueOf(horaMayorSismo));
-        datosMayorSismo.add(String.valueOf(numMayor));
+        datosMayorSismo.add("Día: "+String.valueOf(diaMayorSismo));
+        datosMayorSismo.add("Hora: "+String.valueOf(horaMayorSismo));
+        datosMayorSismo.add("Valor: "+String.valueOf(numMayor));
 
         return datosMayorSismo;
     }
