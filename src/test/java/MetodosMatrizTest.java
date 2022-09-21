@@ -7,14 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MetodosMatrizTest {
     @Test
-    public void probando(){
-        double[][] matriz = MetodosMatriz.generarMatriz(5);
-        MetodosMatriz.llenarMatriz(matriz);
-        MetodosMatriz.mostrarMatriz(matriz);
-        MetodosMatriz.mostrarMayorSismo(matriz);
-
-    }
-    @Test
     public void mostrarMatrizTest(){
         MetodosMatriz.mostrarMatriz(null);
     }
