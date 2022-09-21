@@ -26,10 +26,14 @@ public class MetodosMatriz {
     }
 
     public static void llenarMatriz(double[][]matriz){
-        for (double[] dia : matriz) {
-            for (double valorPorHora : dia) {
-                valorPorHora = valorRegistroRandom();
+        try{
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+                    matriz[i][j] = valorRegistroRandom();
+                }
             }
+        }catch (NullPointerException e){
+            System.out.println("La matriz entregada es nula");
         }
     }
     public static void mostrarMatriz(double[][]matriz){
