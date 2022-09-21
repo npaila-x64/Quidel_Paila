@@ -6,12 +6,17 @@ public class MetodosMatriz {
 
     public static double buscarMayorValorMatriz(double[][]matriz){
         double numMayor = 0;
-        for (double[] dia : matriz) {
-            for (double valorPorHora : dia) {
-                if (valorPorHora > numMayor) {
-                    numMayor = valorPorHora;
+        try{
+            for (double[] dia : matriz) {
+                for (double valorPorHora : dia) {
+                    if (valorPorHora > numMayor) {
+                        numMayor = valorPorHora;
+                    }
                 }
             }
+        }catch (NullPointerException e){
+            System.out.println("La matriz entregada es nula");
+            return 0;
         }
         return numMayor;
     }
