@@ -17,8 +17,7 @@ public class MenuPrincipal {
     }
 
     public static void mostrarMenu(int dias) {
-        double[][] matriz = MetodosMatriz.generarMatriz(dias);
-        MetodosMatriz.llenarMatriz(matriz);
+        var matriz = cargarMatriz(dias);
 
         mostrarOpciones();
         salirMenu:
@@ -82,5 +81,11 @@ public class MenuPrincipal {
     }
     public static void mostrarValorInvalido() {
         System.out.print("Por favor, escoja un número entre 0 y 365\n> ");
+    }
+
+    public static double[][] cargarMatriz(int dias) {
+        var matriz = MetodosMatriz.generarMatriz(dias);
+        MetodosMatriz.llenarMatriz(matriz);
+        return matriz;
     }
 }
