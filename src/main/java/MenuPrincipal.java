@@ -9,25 +9,27 @@ public class MenuPrincipal {
 
     public static void mostrarBienvenida() {
         System.out.print("""
-                
-                
+                Bienvenido/a al analizador sísmico
+                Ingrese el numero de días
                 """.concat("Días> "));
         int dias = pedirNumeroDeDias();
         mostrarMenu(dias);
     }
 
-
     public static void mostrarMenu(int dias) {
+        double[][] matriz = MetodosMatriz.generarMatriz(dias);
+        MetodosMatriz.llenarMatriz(matriz);
+
         mostrarOpciones();
         salirMenu:
         while (true) {
-
             switch (pedirOpcion()) {
                 case 0 -> {break salirMenu;}
-                case 1 -> {}
-//                case 2 -> Calculadora.resolverCuadratica();
-//                case 3 -> new MenuGeometriaAnalitica().mostrarMenu();
-//                case 4 -> SistemaEcuaciones.menuResolucionSistema();
+                case 1 -> MetodosMatriz.mostrarMayorSismo(matriz);
+                case 2 -> CalcularRegistroMayorIgualQue5_5.mostrarDias(matriz);
+                case 3 -> CalcularAlertaEscaladaSismica.mostrarDias(matriz);
+                case 4 -> CalcularAlertaEnjambreSismico.mostrarHayEnjambre(
+                        CalcularAlertaEscaladaSismica.calcularRegistro(matriz));
                 default -> {mostrarOpcionInvalida(); continue;}
             }
             mostrarOpciones();
@@ -36,7 +38,6 @@ public class MenuPrincipal {
 
     public static void mostrarOpciones() {
         System.out.print("""
-                Bienvenido/a al analizador sísmico
                 Escriba una opción
                 [1] Ver menu intensidades
                 [2] Ver días en total que se registraron sismos mayores que 5.5 grados

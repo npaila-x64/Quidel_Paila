@@ -8,11 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CalcularAlertaEscaladaSismicaTest {
 
-    Double[][] matriz;
+    double[][] matriz;
 
     @BeforeEach
     void initMatrizPrueba() {
-        matriz = new Double[1][24];
+        matriz = new double[1][24];
         matriz[0][0] = 1.0;
         matriz[0][1] = 1.0;
         matriz[0][2] = 1.0;

@@ -3,7 +3,7 @@ import java.util.List;
 
 public class CalcularAlertaEscaladaSismica {
 
-    public static List<Integer> calcularRegistro(Double[][] matriz) {
+    public static List<Integer> calcularRegistro(double[][] matriz) {
         int contadorHorasConsecutivas = 0;
         List<Integer> diasObjetivo = new ArrayList<>();
         for (int diaIndice = 0; diaIndice < matriz.length; diaIndice++) {
@@ -22,7 +22,7 @@ public class CalcularAlertaEscaladaSismica {
         return diasObjetivo;
     }
 
-    public static void mostrarDias(Double[][] matriz) {
+    public static void mostrarDias(double[][] matriz) {
         var diasObjetivo = calcularRegistro(matriz);
         System.out.println("Días en que se registraron sismos con grado mayor o igual que 5.5");
         for (int dia : diasObjetivo) {
