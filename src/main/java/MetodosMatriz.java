@@ -14,12 +14,12 @@ public class MetodosMatriz {
         int horaMayorSismo = 0;
 
         try{
-            for (int i = 0; i < matriz.length; i++) {
-                for (int j = 0; j < matriz[i].length; j++) {
-                    if(matriz[i][j] > numMayor){
-                        numMayor = matriz[i][j];
-                        diaMayorSismo = i+1;
-                        horaMayorSismo = j;
+            for (int dia = 0; dia < matriz.length; dia++) {
+                for (int hora = 0; hora < matriz[dia].length; hora++) {
+                    if(matriz[dia][hora] > numMayor){
+                        numMayor = matriz[dia][hora];
+                        diaMayorSismo = (dia+1);
+                        horaMayorSismo = hora;
                     }
                 }
             }
@@ -27,7 +27,7 @@ public class MetodosMatriz {
             System.out.println("La matriz entregada es nula");
             return null;
         }
-        datosMayorSismo.add("Día: " + String.valueOf(diaMayorSismo));
+        datosMayorSismo.add("Dia: " + String.valueOf(diaMayorSismo));
         datosMayorSismo.add("Hora: " + String.valueOf(horaMayorSismo));
         datosMayorSismo.add("Valor: " + String.valueOf(numMayor));
 
@@ -40,9 +40,9 @@ public class MetodosMatriz {
 
     public static void llenarMatriz(double[][]matriz){
         try{
-            for (int i = 0; i < matriz.length; i++) {
-                for (int j = 0; j < matriz[i].length; j++) {
-                    matriz[i][j] = valorRegistroRandom();
+            for (int dia = 0; dia < matriz.length; dia++) {
+                for (int hora = 0; hora < matriz[dia].length; hora++) {
+                    matriz[dia][hora] = valorRegistroRandom();
                 }
             }
         }catch (NullPointerException e){
@@ -51,9 +51,10 @@ public class MetodosMatriz {
     }
     public static void mostrarMatriz(double[][]matriz){
         try{
-            for (int i = 0; i < matriz.length; i++) {
-                for (int j = 0; j < matriz[i].length; j++) {
-                    System.out.println("Valor en la hora " + j + " :" + matriz[i][j]);
+            for (int dia = 0; dia < matriz.length; dia++) {
+                System.out.println("Dia " + (dia+1));
+                for (int hora = 0; hora < matriz[dia].length; hora++) {
+                    System.out.println("Valor en la hora " + hora + " :" + matriz[dia][hora]);
                 }
                 System.out.println();
             }
