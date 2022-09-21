@@ -27,9 +27,9 @@ public class MetodosMatriz {
             System.out.println("La matriz entregada es nula");
             return null;
         }
-        datosMayorSismo.add("Dia: " + String.valueOf(diaMayorSismo));
-        datosMayorSismo.add("Hora: " + String.valueOf(horaMayorSismo));
-        datosMayorSismo.add("Valor: " + String.valueOf(numMayor));
+        datosMayorSismo.add("Dia: " + diaMayorSismo);
+        datosMayorSismo.add("Hora: " + horaMayorSismo);
+        datosMayorSismo.add("Valor: " + numMayor);
 
         return datosMayorSismo;
     }
