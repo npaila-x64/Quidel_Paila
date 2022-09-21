@@ -27,9 +27,9 @@ public class MetodosMatriz {
             System.out.println("La matriz entregada es nula");
             return null;
         }
-        datosMayorSismo.add("Día: "+String.valueOf(diaMayorSismo));
-        datosMayorSismo.add("Hora: "+String.valueOf(horaMayorSismo));
-        datosMayorSismo.add("Valor: "+String.valueOf(numMayor));
+        datosMayorSismo.add("Día: " + String.valueOf(diaMayorSismo));
+        datosMayorSismo.add("Hora: " + String.valueOf(horaMayorSismo));
+        datosMayorSismo.add("Valor: " + String.valueOf(numMayor));
 
         return datosMayorSismo;
     }
@@ -50,11 +50,15 @@ public class MetodosMatriz {
         }
     }
     public static void mostrarMatriz(double[][]matriz){
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                System.out.println("Valor en la hora " + j + " :" + matriz[i][j]);
+        try{
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+                    System.out.println("Valor en la hora " + j + " :" + matriz[i][j]);
+                }
+                System.out.println();
             }
-            System.out.println();
+        }catch (NullPointerException e){
+            System.out.println("La matriz entregada es nula");
         }
     }
 }

@@ -5,9 +5,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MetodosMatrizTest {
-    @Test
-    public void buscarMayorValorMatrizTest(){
-        assertEquals(MetodosMatriz.buscarMayorValorMatriz(null), 0);
-    }
 
+    @Test
+    public void mostrarMatrizTest(){
+        MetodosMatriz.mostrarMatriz(null);
+    }
+    @Test
+    public void datosMayorSismoTest(){
+        MetodosMatriz.datosMayorSismo(null);
+    }
 }
